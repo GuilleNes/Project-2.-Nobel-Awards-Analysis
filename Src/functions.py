@@ -51,7 +51,7 @@ def getting_age (ds):
     return
 
 # We delete some of the rows with missing data (the ones with more than one missing value)
-def drop_nan(df)
+def drop_nan(df):
     dfr.dropna(axis=0, inplace=True, thresh=6)
     df1.reset_index(drop=True, inplace=True)
     return
