@@ -6,14 +6,15 @@ import json
 import sys
 import re
 
+
 # Function for extracting values from the chaos column.
 
 # This one is just for the Award Year
-def get_year(a, b):
+def get_year(dic, a, b):
     append_data = []
-    for i in range(len(dict_nobel)):
-        append_data.append(dict_nobel[i][0][b])
-    df1[a] = append_data
+    for i in range(len(dic)):
+        append_data.append(dic[i][0][b])
+    df_1[a] = append_data
     return 
 
 # This one for getting the info of other fields classified by language
@@ -21,12 +22,12 @@ def get_info(a, b):
     append_data = []
     for i in range(len(dict_nobel)):
         append_data.append(dict_nobel[i][0][b]["en"])
-    df1[a] = append_data
+    df_1[a] = append_data
     return 
 
 #renaming the columns
 def rename_columns(column, newname):
-    df1.rename(columns = {column:newname}, inplace = True)
+    df_1.rename(columns = {column:newname}, inplace = True)
     return
   
 # Dropping columns
@@ -48,9 +49,9 @@ def getting_age (ds):
     return
 
 # We delete some of the rows with missing data (the ones with more than one missing value)
-def drop_nan(df):
+def drop_nan(dfr):
     dfr.dropna(axis=0, inplace=True, thresh=6)
-    df1.reset_index(drop=True, inplace=True)
+    dfr.reset_index(drop=True, inplace=True)
     return
 
 # This function is used for sort and reset the df.
@@ -97,5 +98,7 @@ def delete_rows_country(column):
          
 Countries= ['Albania', 'Algeria', 'Argentina', 'Armenia', 'Azerbaijan', 'Bahrain', 'Belize', 'Benin', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cameroon', 'Chad', 'Chile', 'Colombia', 'Comoros', 'Congo, Rep.', 'Costa Rica', "Cote d'Ivoire", 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic', 'Dominican Republic', 'Ecuador', 'Egypt, Arab Rep.', 'El Salvador', 'Ethiopia', 'Gabon', 'Georgia', 'Ghana', 'Greece', 'Guatemala', 'Guyana', 'Honduras', 'Hungary', 'Indonesia', 'Iran, Islamic Rep.', 'Jordan', 'Kazakhstan', 'Kenya', 'Kuwait', 'Kyrgyz Republic', 'Latvia', 'Lebanon', 'Lesotho', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macao SAR, China', 'Macedonia, FYR', 'Madagascar', 'Malawi', 'Malaysia', 'Mali', 'Malta', 'Mauritius', 'Moldova', 'Mongolia', 'Montenegro', 'Morocco', 'Mozambique', 'Namibia', 'Nicaragua', 'Niger', 'Oman', 'Panama', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Qatar', 'Rwanda', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Slovak Republic', 'Slovenia', 'South Africa', 'Swaziland', 'Syrian Arab Republic', 'Tanzania', 'Thailand', 'Togo', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Uganda', 'Ukraine', 'United Arab Emirates', 'Venezuela, RB', 'Vietnam', 'Yemen, Rep.', 'Zambia', 'Zimbabwe']
 
-lis = ['Australia','Belgium','Brazil','Canada','Denmark','Estonia','Finland', 'France','Germany','Greece','Ireland','Italy', 'Japan','Korea, Rep.''Mexico','Morocco','Netherlands' ,'New Zealand', 'Norway', 'Portugal', 'Russian Federation','South Africa',  'Spain', 'Sweden', 'Switzerland', 'United Kingdom', 'United States']     
+lis = ['Australia','Belgium','Brazil','Canada','Denmark','Estonia','Finland', 'France','Germany','Greece','Ireland','Italy', 'Japan','Korea, Rep.''Mexico','Morocco','Netherlands' ,'New Zealan d', 'Norway', 'Portugal', 'Russian Federation','South Africa',  'Spain', 'Sweden', 'Switzerland', 'United Kingdom', 'United States']     
+
+Countries2= ['India','West Germany','Austrian Empire', 'New Zealand','Southern Rhodesia', 'Guadeloupe Island', 'Brazil','Egypt', 'Romania', 'Northern Ireland', 'British West Indies', 'Crete', 'Venezuela', 'Mexico', 'German-occupied Poland', 'Taiwan','Albania','Schleswig', "nan", 'Nigeria', 'Korea', 'Tibet', 'Burma', 'Saint Lucia', 'British Mandate of Palestine', 'East Timor','Free City of Danzig', 'Gold Coast', 'Iran', 'British Protectorate of Palestine', 'Czechoslovakia','Persia','East Friesland', 'Iceland','Ottoman Empire','French Algeria', 'Liberia','Yemen', 'Pakistan','Belgian Congo','Iraq',   'Bosnia', 'Faroe Islands (Denmark)','Scotland','Tuscany','British India','Russian Empire', 'Hesse-Kassel','Mecklenburg','Schleswig','Ireland','Austria-Hungary','Java, Dutch East Indies','Württemberg','Bavaria', 'Algeria', 'Argentina', 'Armenia', 'Azerbaijan', 'Bahrain', 'Belize', 'Benin', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cameroon', 'Chad', 'Chile', 'Colombia', 'Comoros', 'Congo, Rep.', 'Costa Rica', "Cote d'Ivoire", 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic', 'Dominican Republic', 'Ecuador', 'Egypt, Arab Rep.', 'El Salvador', 'Ethiopia', 'Gabon', 'Georgia', 'Ghana', 'Greece', 'Guatemala', 'Guyana', 'Honduras', 'Hungary', 'Indonesia', 'Iran, Islamic Rep.', 'Jordan', 'Kazakhstan', 'Kenya', 'Kuwait', 'Kyrgyz Republic', 'Latvia', 'Lebanon', 'Lesotho', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macao SAR, China', 'Macedonia, FYR', 'Madagascar', 'Malawi', 'Malaysia', 'Mali', 'Malta', 'Mauritius', 'Moldova', 'Mongolia', 'Montenegro', 'Morocco', 'Mozambique', 'Namibia', 'Nicaragua', 'Niger', 'Oman', 'Panama', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Qatar', 'Rwanda', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Slovak Republic', 'Slovenia', 'South Africa', 'Swaziland', 'Syrian Arab Republic', 'Tanzania', 'Thailand', 'Togo', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Uganda', 'Ukraine', 'United Arab Emirates', 'Venezuela, RB', 'Vietnam', 'Yemen, Rep.', 'Zambia', 'Zimbabwe']
 
