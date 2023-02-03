@@ -42,21 +42,22 @@ In order to connect to the API, clean the datasets and execute the diferent func
 
 ### ANALYSIS
 <hr>
-#####1. In order to begin with the analysis, we are going to see which are the countries with the most awarded people:
+
+##### 1. In order to begin with the analysis, we are going to see which are the countries with the most awarded people:
 
 ![Alt text](Images/Plot_1.jpg)
 
 As we can see above, USA is far the most awarded country since the creation of the Nobel Prize followed by UK and Germany. We will analyze later if this is more related to the whealth or the education levels on this countries.
 <br>
 
-#####2. Now we are going to analyze the different categories of the countries awards:
+##### 2. Now we are going to analyze the different categories of the countries awards:
 
 ![Alt text](Images/plot_10.jpg)
 
 We can see that the Anglosaxon countries are more focused on Science than Literature, for instance. The balance between the categories are more equal in countries like France.
 <br>
 
-#####3. On the next hypothesis, we are going to focus on the gender of the awardee.
+##### 3. On the next hypothesis, we are going to focus on the gender of the awardee.
 
 ![Alt text](Images/Plot_2.jpg)
 
@@ -67,7 +68,7 @@ We can see that the Anglosaxon countries are more focused on Science than Litera
 As we can see above, there is a huge difference between the gender of the awardees. For instance, the UK do not have any female awardee. Despite on the last years more women have been awarded with the Nobel, we are not able to conclude that the tendency has increased yet. The difference between the male and female gender is still huge. 
 <br>
 
-####4. Next, we are going to see if there is any correlation between the GDP (wealth) of the countries and the number of awards they have:
+#### 4. Next, we are going to see if there is any correlation between the GDP (wealth) of the countries and the number of awards they have:
 
 ![Alt text](Images/GDP.jpg)
 
